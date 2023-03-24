@@ -3,11 +3,15 @@ import {SafeAreaView, View, Text, StyleSheet} from "react-native";
 
 import Button from '../components/Button';
 
-function Welcome () { 
+function Welcome ({navigation}) { 
+
+    function gotoMemberSign() {
+        navigation.navigate ('MemberSignScreen')
+    }
     return (
         <SafeAreaView style ={styles.container}>
-            <Text style = {styles.header}>Welcome</Text>
-            <Button text=" Üye Kaydı Oluştur." onPress={null}/>
+            <Text style = {styles.header}>Kebap Fitness Salonu</Text>
+            <Button text=" Üye Kaydı Oluştur." onPress={gotoMemberSign}/>
         </SafeAreaView>
     );
 };
@@ -16,7 +20,6 @@ const styles = StyleSheet.create({
     container :{
         flex :1,
         justifyContent :'center',
-        alignItems : 'center',
 },
     header :{
         textAlign : 'center',
